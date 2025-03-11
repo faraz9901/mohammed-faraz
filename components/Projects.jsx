@@ -25,9 +25,9 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="p-4">
-            <h3 className='text-2xl'>Personal Projects</h3>
-            <div className='grid lg:grid-cols-2 gap-16 pt-5'>
+        <section id="projects" className="p-4 border-t border-t-gray-300">
+            <h3 className='text-2xl font-bold mb-5'>Personal Projects</h3>
+            <div className='grid lg:grid-cols-2 gap-16'>
                 {projects.map((project) => <ProjectCard key={project.name} project={project} />)}
             </div>
         </section>
@@ -36,7 +36,7 @@ export default function Projects() {
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className='hover:scale-[1.02] ease-out p-5 duration-200  rounded-md flex flex-col  gap-3 bg-gray-899 shadow-lg'>
+        <div className='hover:scale-[1.02] ease-out p-5 duration-200  rounded-md flex flex-col  gap-3 dark:bg-gray-700 shadow-lg'>
             <img src={project.image} alt={project.name} className='rounded-md' />
 
             <h4 className="text-lg font-bold">{project.name}</h4>
