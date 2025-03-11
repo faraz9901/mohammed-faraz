@@ -6,8 +6,7 @@ import { Moon, Sun } from 'lucide-react';
 
 export default function ThemeButton() {
 
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || '');
-    const [isOn, setIsOn] = useState(false)
+    const [theme, setTheme] = useState(localStorage?.getItem('theme') || 'light');
 
     useEffect(() => {
         setThemeOnFirstLoad();

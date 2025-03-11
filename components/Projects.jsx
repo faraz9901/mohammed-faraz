@@ -1,4 +1,5 @@
 import { SquareArrowOutUpRight } from "lucide-react"
+import Section from "./Section"
 
 const projects = [
     {
@@ -25,12 +26,12 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="p-4 border-t border-t-gray-300">
+        <Section id="projects" className="p-4 border-t border-t-gray-300">
             <h3 className='text-2xl font-bold mb-5'>Personal Projects</h3>
             <div className='grid lg:grid-cols-2 gap-16'>
                 {projects.map((project) => <ProjectCard key={project.name} project={project} />)}
             </div>
-        </section>
+        </Section>
     )
 }
 

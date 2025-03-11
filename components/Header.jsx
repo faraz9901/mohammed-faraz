@@ -3,11 +3,20 @@
 import ThemeButton from "./ThemeButton";
 
 export default function Header() {
-    const downloadResume = () => {
-        const link = document.createElement('a');
-        link.href = "https://res.cloudinary.com/dd5zj14ys/image/upload/v1741675035/Faraz_chrzv2.pdf";
+    const downloadResume = async () => {
+        const response = await fetch("https://res.cloudinary.com/dd5zj14ys/image/upload/v1741675035/Faraz_chrzv2.pdf");
+        const blob = await response.blob();
+        const blobUrl = URL.createObjectURL(blob);
+
+        const link = document.createElement("a");
+        link.href = blobUrl;
         link.download = "Faraz_resume.pdf";
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
+
+        // Cleanup
+        URL.revokeObjectURL(blobUrl);
         link.remove();
     }
 
@@ -25,7 +34,7 @@ export default function Header() {
                         <a href="#home">Home</a>
                     </li>
                     <li>
-                        <a href="#home">About</a>
+                        <a href="#about">About</a>
                     </li>
                     <li>
                         <a href="#skills">Skills</a>

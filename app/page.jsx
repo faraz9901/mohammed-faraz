@@ -2,6 +2,7 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Landing from "@/components/Landing";
 import Projects from "@/components/Projects";
+import Section from "@/components/Section";
 import Skills from "@/components/Skills";
 
 export default function Home() {
@@ -11,7 +12,9 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
+      <Section />
       <Contact />
+
     </div>
   );
 }

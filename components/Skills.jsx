@@ -1,4 +1,5 @@
 import React from 'react'
+import Section from './Section'
 
 
 const skills = [
@@ -64,13 +65,12 @@ const skills = [
 
 export default function Skills() {
     return (
-        <section id="skills" className="p-4 border-t border-t-gray-300">
+        <Section id="skills" className="p-4 border-t border-t-gray-300">
             <h3 className='text-2xl font-bold mb-5'>Skills</h3>
-
             <div className='flex flex-wrap gap-5'>
                 {skills.map(skill => <SkillCard key={skill.name} skill={skill} />)}
             </div>
-        </section>
+        </Section >
     )
 }
 

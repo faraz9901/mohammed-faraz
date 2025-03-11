@@ -1,4 +1,5 @@
 import React from 'react'
+import Section from './Section'
 
 
 const socialLinks = {
@@ -9,7 +10,7 @@ const socialLinks = {
 
 export default function Contact() {
     return (
-        <section id='contact' className='flex flex-col lg:flex-row gap-3 p-4  border-t border-t-gray-300 justify-center items-center'>
+        <Section id='contact' className='flex flex-col lg:flex-row gap-3 p-4  border-t border-t-gray-300 justify-center items-center'>
             <div className='flex-1 flex flex-col gap-3 px-4 border-r border-r-gray-300'>
                 <h2 className='text-2xl text-center font-bold'>Contact Me</h2>
 
@@ -45,6 +46,6 @@ export default function Contact() {
                     </a>
                 </div>
             </div>
-        </section >
+        </Section >
     )
 }
