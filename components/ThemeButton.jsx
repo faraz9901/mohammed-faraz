@@ -36,7 +36,7 @@ export default function ThemeButton() {
                 }}
             >
                 {theme === 'dark' ?
-                    <Moon className='text-gray-900' />
+                    <Moon className='fill-gray-900 text-gray-900' />
                     :
                     <Sun className='text-gray-900' />
                 }

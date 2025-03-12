@@ -37,7 +37,7 @@ export default function Projects() {
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className='hover:scale-[1.02] ease-out p-5 duration-200  rounded-md flex flex-col  gap-3 dark:bg-gray-700 shadow-lg'>
+        <div className='hover:scale-[1.02] ease-out p-5 duration-200  rounded-md flex flex-col  gap-3 dark:bg-gray-900 shadow-lg'>
             <img src={project.image} alt={project.name} className='rounded-md' />
 
             <h4 className="text-lg font-bold">{project.name}</h4>

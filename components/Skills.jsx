@@ -78,7 +78,7 @@ export default function Skills() {
 function SkillCard({ skill }) {
 
     return (
-        <div className='flex justify-between hover:scale-[1.02] md:w-60 w-full h-24 items-center gap-2 py-2 px-5 rounded-md shadow-lg dark:bg-gray-700 '>
+        <div className='flex justify-between hover:scale-[1.02] md:w-60 w-full h-24 items-center gap-2 py-2 px-5 rounded-md shadow-lg dark:bg-gray-900 '>
             <img className='w-16' src={skill.image} alt={skill.name} />
             <p className='font-bold text-xl'>{skill.name} </p>
         </div>

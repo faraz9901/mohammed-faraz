@@ -42,8 +42,8 @@ export default function Contact() {
 
     return (
         <Section id='contact' className='flex flex-col lg:flex-row gap-3 p-4  border-t border-t-gray-300 justify-center items-center'>
-            <div className='flex-1 flex flex-col gap-3 px-4 border-r border-r-gray-300'>
-                <h2 className='text-2xl text-center font-bold'>Contact Me</h2>
+            <div className='flex-1 flex flex-col gap-3 lg:px-4 w-full'>
+                <h3 className='text-2xl text-center font-bold'>Contact Me</h3>
 
                 <form onSubmit={handleSubmit} className='flex flex-col w-full gap-5'>
                     <input type="text" name='name' required placeholder='Name' />
@@ -55,7 +55,7 @@ export default function Contact() {
             </div>
             <div className='flex-1 flex flex-col gap-5 justify-center items-center'>
                 <img className='w-40 rounded-full' src='/avatar.jpeg' />
-                <h2 className='text-2xl font-bold'>Connect With Me</h2>
+                <h3 className='text-2xl font-bold'>Connect With Me</h3>
 
                 <div className='flex gap-5'>
                     <a target='_blank' href={socialLinks.instagram}>

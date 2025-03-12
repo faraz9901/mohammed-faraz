@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="">
-        <div className="flex flex-col h-screen overflow-hidden">
+        <div className="flex flex-col h-screen overflow-hidden max-w-[1440px] mx-auto">
           <Header />
           <main className="flex-1 overflow-y-scroll scroll-smooth no-scrollbar">
             {children}

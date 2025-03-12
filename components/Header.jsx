@@ -23,11 +23,11 @@ export default function Header() {
     return (
 
         <header className='px-4 py-2 w-full rounded-md flex h-20 items-center justify-between shadow-md  '>
-            <div id='logo'>
+            <a href="#home" id='logo'>
                 <img src='/avatar.jpeg' className='rounded-full w-16' />
-            </div>
+            </a>
 
-            <nav className=''>
+            <nav className='hidden md:flex'>
                 <ul className='flex items-center gap-10'>
 
                     <li>
