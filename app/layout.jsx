@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Header from "@/components/Header";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
           <main className="flex-1 overflow-y-scroll scroll-smooth no-scrollbar">
             {children}
           </main>
+          <Toaster />
         </div>
       </body>
     </html>

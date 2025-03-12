@@ -1,5 +1,7 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Section from './Section'
+import toast from 'react-hot-toast'
 
 
 const socialLinks = {
@@ -9,17 +11,46 @@ const socialLinks = {
 }
 
 export default function Contact() {
+    const [isPending, setIsPending] = useState(false)
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const formData = new FormData(e.target)
+        setIsPending(true)
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                body: formData
+            })
+
+            const responseData = await response.json()
+
+            if (!responseData.success) {
+                toast.error(responseData.message)
+            }
+
+            if (responseData.success) {
+                toast.success(responseData.message)
+                e.target.reset()
+            }
+
+        } catch (error) {
+            toast.error(error.message)
+        } finally {
+            setIsPending(false)
+        }
+    }
+
     return (
         <Section id='contact' className='flex flex-col lg:flex-row gap-3 p-4  border-t border-t-gray-300 justify-center items-center'>
             <div className='flex-1 flex flex-col gap-3 px-4 border-r border-r-gray-300'>
                 <h2 className='text-2xl text-center font-bold'>Contact Me</h2>
 
-                <form action={'/api/contact'} method='post' className='flex flex-col w-full gap-5'>
+                <form onSubmit={handleSubmit} className='flex flex-col w-full gap-5'>
                     <input type="text" name='name' required placeholder='Name' />
                     <input type="email" name='email' required placeholder='Email' />
                     <input type="text" name='subject' required placeholder='Subject' />
                     <textarea placeholder='Message' name='message' required />
-                    <button >Send</button>
+                    <button disabled={isPending}>Send</button>
                 </form>
             </div>
             <div className='flex-1 flex flex-col gap-5 justify-center items-center'>

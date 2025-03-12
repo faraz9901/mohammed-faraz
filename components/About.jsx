@@ -9,7 +9,7 @@ export default function About() {
 
             <p>
 
-                I'm Mohammed Faraz, a dedicated MERN stack developer located in Hyderabad, Telangana, India. My expertise spans JavaScript (ES6), TypeScript, React.js, Node.js, Express.js, Nest.js and MongoDB, encompassing both frontend and backend development.
+                I'm Mohammed Faraz from Telangana India, a dedicated MERN stack developer located in Hyderabad, Telangana, India. My expertise spans JavaScript (ES6), TypeScript, React.js, Node.js, Express.js, Nest.js and MongoDB, encompassing both frontend and backend development.
 
                 I have a proven track record of crafting dynamic and user-friendly web applications, from creating engaging interfaces with React.js and Bootstrap/Tailwind CSS, to architecting robust backend systems using Node.js and Nest.js. My focus is always on delivering efficient, scalable, and secure solutions that meet user needs.
 
