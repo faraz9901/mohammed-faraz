@@ -20,7 +20,7 @@ export default function ThemeButton() {
 
     return (
         <div
-            className="w-12 h-6 rounded-3xl bg-white  cursor-pointer flex py-0 px-0 "
+            className="min-w-[50px] w-12 h-6 rounded-3xl bg-white  cursor-pointer flex py-0 px-0 "
             style={{
                 justifyContent: "flex-" + (theme === 'dark' ? "end" : "start"),
             }}
