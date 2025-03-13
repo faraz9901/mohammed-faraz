@@ -47,13 +47,16 @@ export default function Header() {
                     </li>
 
                     <li>
-                        <button onClick={downloadResume}>
-                            Resume
-                        </button>
                     </li>
                 </ul>
             </nav>
-            <ThemeButton />
+            <div className="flex gap-2 items-center">
+                <button className="md:hidden" onClick={downloadResume}>
+                    Resume
+                </button>
+
+                <ThemeButton />
+            </div>
         </header>
     )
 }
