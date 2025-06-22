@@ -89,8 +89,10 @@ function Contact() {
             setLoading(true);
             const response = await fetch("https://formsubmit.co/ajax/mdfaraz9901@gmail.com", {
                 method: "POST",
-                data: JSON.stringify(formData),
-                dataType: "json"
+                body: JSON.stringify(formData),
+                headers: {
+                    "Content-Type": "application/json"
+                }
             });
 
             if (!response.ok) {
