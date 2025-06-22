@@ -1,37 +1,143 @@
 import React from 'react'
+import { GraduationCap, Briefcase, Calendar, MapPin } from 'lucide-react'
 
 function Experience() {
+    const education = [
+        {
+            degree: "Bachelor of Engineering (ECE)",
+            institution: "ISL Engineering College",
+            location: "Hyderabad",
+            year: "2022",
+            gpa: "CGPA: 7.3",
+            icon: <GraduationCap className="h-6 w-6" />
+        },
+        {
+            degree: "Diploma in Engineering (ECE)",
+            institution: "Nawab Shah Alam Khan College",
+            location: "Hyderabad",
+            year: "2019",
+            gpa: "CGPA: 7.6",
+            icon: <GraduationCap className="h-6 w-6" />
+        }
+    ];
+
+    const workExperience = [
+        {
+            title: "Software Intern",
+            company: "Devmind IT Solutions",
+            period: "Apr 2025 – Present",
+            location: "Remote",
+            icon: <Briefcase className="h-6 w-6" />,
+            achievements: [
+                "Contributed to building Noteswala using Next.js and Tailwind CSS",
+                "Created fully responsive landing pages and achieved 90+ Lighthouse performance scores",
+                "Integrated backend APIs and deployed the app using Vercel"
+            ]
+        },
+        {
+            title: "Freelance MERN Stack Developer",
+            company: "Self-Employed",
+            period: "Nov 2023 – Jan 2025",
+            location: "Remote",
+            icon: <Briefcase className="h-6 w-6" />,
+            achievements: [
+                "Developed a job portal with user authentication (JWT), Nest.js backend, and Recharts dashboard",
+                "Built secure and scalable REST APIs with MongoDB for CRUD operations and user roles"
+            ]
+        }
+    ];
+
     return (
         <>
-
             {/* Education Section */}
-            <section id="education" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 animate-fade-in-up">
-                <h2 className="text-3xl sm:text-4xl font-semibold text-indigo-600 mb-8">Education</h2>
-                <ul className="space-y-6 text-gray-700 text-base sm:text-lg max-w-3xl">
-                    <li className="transform hover:translate-x-2 transition-transform duration-200">Bachelor of Engineering (ECE), ISL Engineering College, Hyderabad (2022) – CGPA: 7.3</li>
-                    <li className="transform hover:translate-x-2 transition-transform duration-200">Diploma in Engineering (ECE), Nawab Shah Alam Khan College, Hyderabad (2019) – CGPA: 7.6</li>
-                </ul>
-            </section>
+            <section id="education" className="section-padding relative scroll-mt-24">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
 
-            {/* Work Experience Section */}
-            <section id="work" className="">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 animate-fade-in-up">
-                    <h2 className="text-3xl sm:text-4xl font-semibold text-indigo-600 mb-8">Professional Experience</h2>
-                    <div className="space-y-10 text-gray-700">
-                        <div className=" p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                            <h3 className="text-xl sm:text-2xl font-semibold">Software Intern – Devmind IT Solutions <span className="text-sm text-gray-500">(Apr 2025 – Present)</span></h3>
-                            <ul className="list-disc list-inside ml-4 space-y-2 text-base sm:text-lg">
-                                <li className="transform hover:translate-x-2 transition-transform duration-200">Contributed to building <strong>Noteswala</strong> using Next.js and Tailwind CSS</li>
-                                <li className="transform hover:translate-x-2 transition-transform duration-200">Created fully responsive landing pages and achieved 90+ Lighthouse performance scores</li>
-                                <li className="transform hover:translate-x-2 transition-transform duration-200">Integrated backend APIs and deployed the app using Vercel</li>
-                            </ul>
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Section Header */}
+                    <div className="text-center mb-16 animate-fade-in-up">
+                        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                            <span className="gradient-text">Education</span> & Experience
+                        </h2>
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                            My academic background and professional journey
+                        </p>
+                    </div>
+
+                    {/* Education Timeline */}
+                    <div className="mb-20">
+                        <h3 className="text-3xl font-bold text-white mb-12 text-center">Education</h3>
+                        <div className="space-y-8">
+                            {education.map((edu, index) => (
+                                <div key={index} className={`flex items-start space-x-6 ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
+                                    <div className="flex-shrink-0">
+                                        <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                                            <div className="text-white">
+                                                {edu.icon}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex-1 card hover-lift">
+                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                            <h4 className="text-xl font-bold text-gray-800">{edu.degree}</h4>
+                                            <span className="text-sm text-gray-500 mt-2 sm:mt-0">{edu.year}</span>
+                                        </div>
+                                        <div className="flex items-center space-x-4 mb-3">
+                                            <div className="flex items-center space-x-2">
+                                                <MapPin className="h-4 w-4 text-gray-500" />
+                                                <span className="text-gray-600">{edu.institution}</span>
+                                            </div>
+                                            <div className="flex items-center space-x-2">
+                                                <Calendar className="h-4 w-4 text-gray-500" />
+                                                <span className="text-gray-600">{edu.location}</span>
+                                            </div>
+                                        </div>
+                                        <p className="text-gray-700 font-medium">{edu.gpa}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                        <div className=" p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                            <h3 className="text-xl sm:text-2xl font-semibold">Freelance MERN Stack Developer <span className="text-sm text-gray-500">(Nov 2023 – Jan 2025)</span></h3>
-                            <ul className="list-disc list-inside ml-4 space-y-2 text-base sm:text-lg">
-                                <li className="transform hover:translate-x-2 transition-transform duration-200">Developed a job portal with user authentication (JWT), Nest.js backend, and Recharts dashboard</li>
-                                <li className="transform hover:translate-x-2 transition-transform duration-200">Built secure and scalable REST APIs with MongoDB for CRUD operations and user roles</li>
-                            </ul>
+                    </div>
+
+                    {/* Work Experience Timeline */}
+                    <div>
+                        <h3 className="text-3xl font-bold text-white mb-12 text-center">Professional Experience</h3>
+                        <div className="space-y-8">
+                            {workExperience.map((work, index) => (
+                                <div key={index} className={`flex items-start space-x-6 ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
+                                    <div className="flex-shrink-0">
+                                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                                            <div className="text-white">
+                                                {work.icon}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex-1 card hover-lift">
+                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                            <h4 className="text-xl font-bold text-gray-800">{work.title}</h4>
+                                            <span className="text-sm text-gray-500 mt-2 sm:mt-0">{work.period}</span>
+                                        </div>
+                                        <div className="flex items-center space-x-4 mb-4">
+                                            <div className="flex items-center space-x-2">
+                                                <Briefcase className="h-4 w-4 text-gray-500" />
+                                                <span className="text-gray-600 font-medium">{work.company}</span>
+                                            </div>
+                                            <div className="flex items-center space-x-2">
+                                                <MapPin className="h-4 w-4 text-gray-500" />
+                                                <span className="text-gray-600">{work.location}</span>
+                                            </div>
+                                        </div>
+                                        <ul className="space-y-2">
+                                            {work.achievements.map((achievement, achievementIndex) => (
+                                                <li key={achievementIndex} className="flex items-start space-x-2">
+                                                    <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                                                    <span className="text-gray-700">{achievement}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

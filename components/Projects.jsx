@@ -1,27 +1,137 @@
 import React from 'react'
+import { ExternalLink, Github, Globe, Code } from 'lucide-react'
 
 function Projects() {
+    const projects = [
+        {
+            title: "Noteswala",
+            description: "A comprehensive study platform for medical students offering access to handwritten notes and study material with advanced search and filtering capabilities.",
+            link: "https://noteswala.site",
+            github: null,
+            tech: ["Next.js", "Tailwind CSS", "Vercel", "Responsive Design"],
+            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+            featured: true
+        },
+        {
+            title: "Noteswala Store",
+            description: "An e-commerce platform selling premium study notes with product listings, secure checkout, and user management features.",
+            link: "https://store.noteswala.site",
+            github: null,
+            tech: ["Next.js", "Redux Toolkit", "Tailwind CSS", "E-commerce"],
+            image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+            featured: true
+        },
+        {
+            title: "Twitter Clone",
+            description: "A full-featured Twitter clone with user authentication, post creation, like/comment functionality, and real-time updates.",
+            link: "https://twitter-7jfi.onrender.com/",
+            github: null,
+            tech: ["MERN Stack", "TypeScript", "Render", "Social Media"],
+            image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=400&h=300&fit=crop",
+            featured: true
+        }
+    ];
+
     return (
-        < section id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 animate-fade-in-up" >
-            <h2 className="text-3xl sm:text-4xl font-semibold text-indigo-600 mb-8">Key Projects</h2>
-            <ul className="space-y-6 text-gray-700">
-                <li className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <strong className="text-lg sm:text-xl">Noteswala</strong> – <a href="https://noteswala.site" target="_blank" className="text-indigo-600 hover:underline">noteswala.site</a><br />
-                    A study platform for medical students offering access to handwritten notes and study material.
-                    <em className="block text-sm text-gray-500 mt-1">Tech: Next.js, Tailwind CSS, Vercel</em>
-                </li>
-                <li className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <strong className="text-lg sm:text-xl">Noteswala Store</strong> – <a href="https://store.noteswala.site" target="_blank" className="text-indigo-600 hover:underline">store.noteswala.site</a><br />
-                    An e-commerce platform selling premium study notes with product listings and checkout features.
-                    <em className="block text-sm text-gray-500 mt-1">Tech: Next.js, Redux Toolkit, Tailwind CSS</em>
-                </li>
-                <li className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <strong className="text-lg sm:text-xl">Twitter Clone</strong> – <a href="https://twitter-7jfi.onrender.com/" target="_blank" className="text-indigo-600 hover:underline">twitter-7jfi.onrender.com</a><br />
-                    A full-featured Twitter clone with login, post creation, and like/comment functionality.
-                    <em className="block text-sm text-gray-500 mt-1">Tech: MERN Stack, TypeScript, Render</em>
-                </li>
-            </ul>
-        </section >
+        <section id="projects" className="section-padding relative scroll-mt-24">
+            {/* Background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
+
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Section Header */}
+                <div className="text-center mb-16 animate-fade-in-up">
+                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                        Featured <span className="gradient-text">Projects</span>
+                    </h2>
+                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                        Showcasing my best work and technical expertise
+                    </p>
+                </div>
+
+                {/* Projects Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
+                    {projects.map((project, index) => (
+                        <div key={index} className="card hover-lift group overflow-hidden">
+                            {/* Project Image */}
+                            <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div className="absolute bottom-4 left-4 right-4">
+                                    <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                                </div>
+                            </div>
+
+                            {/* Project Content */}
+                            <div className="space-y-4">
+                                <p className="text-gray-700 leading-relaxed">
+                                    {project.description}
+                                </p>
+
+                                {/* Tech Stack */}
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tech.map((tech, techIndex) => (
+                                        <span
+                                            key={techIndex}
+                                            className="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-xs font-medium rounded-full"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Project Links */}
+                                <div className="flex items-center space-x-4 pt-4 border-t border-gray-200">
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-medium transition-colors duration-200"
+                                    >
+                                        <Globe className="h-4 w-4" />
+                                        <span>Live Demo</span>
+                                    </a>
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center space-x-2 text-gray-600 hover:text-gray-700 font-medium transition-colors duration-200"
+                                        >
+                                            <Github className="h-4 w-4" />
+                                            <span>Code</span>
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Call to Action */}
+                <div className="text-center mt-16 animate-fade-in-up">
+                    <div className="card inline-block">
+                        <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                            Interested in working together?
+                        </h3>
+                        <p className="text-gray-600 mb-6 max-w-2xl">
+                            I&apos;m always open to discussing new opportunities and exciting projects.
+                            Let&apos;s create something amazing together!
+                        </p>
+                        <a
+                            href="#contact"
+                            className="btn-primary inline-flex items-center"
+                        >
+                            <Code className="mr-2 h-4 w-4" />
+                            Let&apos;s Connect
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
 
