@@ -26,12 +26,12 @@ function Skills() {
         {
             icon: <Settings className="h-6 w-6" />,
             title: "Tools & DevOps",
-            skills: ["Git", "GitHub", "Postman", "Firebase", "Vercel", "Docker"]
+            skills: ["Git", "GitHub", "Postman", "Firebase", "Vercel", "Render"]
         },
         {
             icon: <Palette className="h-6 w-6" />,
             title: "Design & Platforms",
-            skills: ["Responsive Design", "UI/UX", "Figma", "Adobe XD", "Linux"]
+            skills: ["Responsive Design", "UI/UX", "Figma", "SEO", "Linux"]
         }
     ];
 
@@ -43,10 +43,10 @@ function Skills() {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16 animate-fade-in-up">
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                        Technical <span className="gradient-text">Skills</span>
+                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 section-heading">
+                        Technical <span className="">Skills</span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                    <p className="text-xl text-gray-200 max-w-3xl mx-auto section-subheading">
                         A comprehensive toolkit for building modern web applications
                     </p>
                 </div>
@@ -80,7 +80,7 @@ function Skills() {
                 </div>
 
                 {/* Experience Level */}
-                <div className="mt-16 animate-fade-in-up">
+                {/* <div className="mt-16 animate-fade-in-up">
                     <div className="card text-center">
                         <h3 className="text-2xl font-bold text-gray-800 mb-8">
                             Experience Level
@@ -109,7 +109,7 @@ function Skills() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )

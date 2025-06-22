@@ -1,61 +1,123 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
+import toast from 'react-hot-toast';
+
+const contactInfo = [
+    {
+        icon: <Mail className="h-6 w-6" />,
+        title: "Email",
+        value: "mdfaraz9901@gmail.com",
+        link: "mailto:mdfaraz9901@gmail.com"
+    },
+    {
+        icon: <Phone className="h-6 w-6" />,
+        title: "Phone",
+        value: "+91 9533232256",
+        link: "tel:+919533232256"
+    },
+    {
+        icon: <MapPin className="h-6 w-6" />,
+        title: "Location",
+        value: "Hyderabad, India",
+        link: null
+    }
+];
+
+const socialLinks = [
+    {
+        icon: <Github className="h-5 w-5" />,
+        name: "GitHub",
+        url: "https://github.com/faraz9901",
+        color: "hover:text-gray-800"
+    },
+    {
+        icon: <Linkedin className="h-5 w-5" />,
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/mohammed-faraz",
+        color: "hover:text-blue-600"
+    },
+    {
+        icon: <Twitter className="h-5 w-5" />,
+        name: "Twitter",
+        url: "https://x.com/Mohammedfaraz91",
+        color: "hover:text-blue-400"
+    }
+];
+
+
+const validateForm = (formData) => {
+    const { name, email, subject, message } = formData;
+    if (!name || !email || !subject || !message) {
+        return false;
+    }
+    return true;
+}
 
 function Contact() {
-    const contactInfo = [
-        {
-            icon: <Mail className="h-6 w-6" />,
-            title: "Email",
-            value: "mdfaraz9901@gmail.com",
-            link: "mailto:mdfaraz9901@gmail.com"
-        },
-        {
-            icon: <Phone className="h-6 w-6" />,
-            title: "Phone",
-            value: "+91 9533232256",
-            link: "tel:+919533232256"
-        },
-        {
-            icon: <MapPin className="h-6 w-6" />,
-            title: "Location",
-            value: "Hyderabad, India",
-            link: null
-        }
-    ];
 
-    const socialLinks = [
-        {
-            icon: <Github className="h-5 w-5" />,
-            name: "GitHub",
-            url: "https://github.com/faraz9901",
-            color: "hover:text-gray-800"
-        },
-        {
-            icon: <Linkedin className="h-5 w-5" />,
-            name: "LinkedIn",
-            url: "https://linkedin.com/in/mohammed-faraz",
-            color: "hover:text-blue-600"
-        },
-        {
-            icon: <Twitter className="h-5 w-5" />,
-            name: "Twitter",
-            url: "https://twitter.com/faraz9901",
-            color: "hover:text-blue-400"
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+    });
+
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (loading) return;
+
+        const isValid = validateForm(formData);
+
+        if (!isValid) {
+            toast.error("Please fill all the fields");
+            return;
         }
-    ];
+
+        try {
+            setLoading(true);
+            const response = await fetch("https://formsubmit.co/ajax/mdfaraz9901@gmail.com", {
+                method: "POST",
+                data: JSON.stringify(formData),
+                dataType: "json"
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to submit form");
+            }
+
+            toast.success("Form submitted successfully");
+            setFormData({ name: "", email: "", subject: "", message: "" });
+        } catch (error) {
+            toast.error("Failed to submit form. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
-        <section id="contact" className="section-padding relative scroll-mt-24 pb-24">
+        <section id="contact" className="section-padding relative scroll-mt-24 !pb-2">
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16 animate-fade-in-up">
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                        Let&apos;s <span className="gradient-text">Connect</span>
+                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 section-heading">
+                        Let&apos;s <span className="">Connect</span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                    <p className="text-xl text-gray-200 max-w-3xl mx-auto section-subheading">
                         Ready to start a conversation? I&apos;d love to hear from you!
                     </p>
                 </div>
@@ -121,7 +183,7 @@ function Contact() {
                             <h3 className="text-2xl font-bold text-gray-800 mb-8">
                                 Send a Message
                             </h3>
-                            <form className="space-y-6">
+                            <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div>
                                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -132,7 +194,7 @@ function Contact() {
                                             id="name"
                                             name="name"
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-                                            placeholder="Your name"
+                                            placeholder="Your name" value={formData.name} onChange={handleChange}
                                         />
                                     </div>
                                     <div>
@@ -144,7 +206,7 @@ function Contact() {
                                             id="email"
                                             name="email"
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-                                            placeholder="your@email.com"
+                                            placeholder="your@email.com" value={formData.email} onChange={handleChange}
                                         />
                                     </div>
                                 </div>
@@ -157,7 +219,7 @@ function Contact() {
                                         id="subject"
                                         name="subject"
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-                                        placeholder="What's this about?"
+                                        placeholder="What's this about?" value={formData.subject} onChange={handleChange}
                                     />
                                 </div>
                                 <div>
@@ -169,15 +231,16 @@ function Contact() {
                                         name="message"
                                         rows={6}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none"
-                                        placeholder="Tell me about your project..."
+                                        placeholder="Tell me about your project..." value={formData.message} onChange={handleChange}
                                     ></textarea>
                                 </div>
                                 <button
                                     type="submit"
-                                    className="btn-primary w-full inline-flex items-center justify-center"
+                                    disabled={loading}
+                                    className="btn-primary w-full inline-flex items-center justify-center disabled:opacity-50"
                                 >
                                     <Send className="mr-2 h-4 w-4" />
-                                    Send Message
+                                    {loading ? "Sending..." : "Send Message"}
                                 </button>
                             </form>
                         </div>
@@ -185,12 +248,12 @@ function Contact() {
                 </div>
 
                 {/* Footer */}
-                <div className="text-center mt-16 animate-fade-in-up">
+                <div className="text-center w-11/12 mx-auto mt-16 animate-fade-in-up">
                     <div className="glass rounded-lg p-8">
-                        <p className="text-gray-300 text-lg mb-4">
+                        <p className="text-white text-lg">
                             Thanks for visiting my portfolio!
                         </p>
-                        <p className="text-gray-400">
+                        <p className="text-white">
                             © 2024 Mohammed Faraz. Built with ❤️ using Next.js & Tailwind CSS
                         </p>
                     </div>

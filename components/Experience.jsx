@@ -38,7 +38,7 @@ function Experience() {
             title: "Freelance MERN Stack Developer",
             company: "Self-Employed",
             period: "Nov 2023 – Jan 2025",
-            location: "Remote",
+            location: "Hyderabad",
             icon: <Briefcase className="h-6 w-6" />,
             achievements: [
                 "Developed a job portal with user authentication (JWT), Nest.js backend, and Recharts dashboard",
@@ -56,17 +56,17 @@ function Experience() {
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Section Header */}
                     <div className="text-center mb-16 animate-fade-in-up">
-                        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                            <span className="gradient-text">Education</span> & Experience
+                        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 section-heading">
+                            <span className="">Education</span> & Experience
                         </h2>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-200 max-w-3xl mx-auto section-subheading">
                             My academic background and professional journey
                         </p>
                     </div>
 
                     {/* Education Timeline */}
                     <div className="mb-20">
-                        <h3 className="text-3xl font-bold text-white mb-12 text-center">Education</h3>
+                        <h3 className="text-3xl font-bold text-white mb-12 text-center section-heading">Education</h3>
                         <div className="space-y-8">
                             {education.map((edu, index) => (
                                 <div key={index} className={`flex items-start space-x-6 ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
@@ -101,7 +101,7 @@ function Experience() {
 
                     {/* Work Experience Timeline */}
                     <div>
-                        <h3 className="text-3xl font-bold text-white mb-12 text-center">Professional Experience</h3>
+                        <h3 className="text-3xl font-bold text-white mb-12 text-center section-heading">Professional Experience</h3>
                         <div className="space-y-8">
                             {workExperience.map((work, index) => (
                                 <div key={index} className={`flex items-start space-x-6 ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>

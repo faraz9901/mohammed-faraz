@@ -28,10 +28,10 @@ function About() {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16 animate-fade-in-up">
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                        About <span className="gradient-text">Me</span>
+                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 section-heading">
+                        About <span className="">Me</span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                    <p className="text-xl text-gray-200 max-w-3xl mx-auto section-subheading">
                         Passionate full-stack developer with expertise in modern web technologies
                     </p>
                 </div>

@@ -9,7 +9,7 @@ function Projects() {
             link: "https://noteswala.site",
             github: null,
             tech: ["Next.js", "Tailwind CSS", "Vercel", "Responsive Design"],
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+            image: "/noteswala.png",
             featured: true
         },
         {
@@ -18,7 +18,7 @@ function Projects() {
             link: "https://store.noteswala.site",
             github: null,
             tech: ["Next.js", "Redux Toolkit", "Tailwind CSS", "E-commerce"],
-            image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+            image: "/store.png",
             featured: true
         },
         {
@@ -40,10 +40,10 @@ function Projects() {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16 animate-fade-in-up">
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                        Featured <span className="gradient-text">Projects</span>
+                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 section-heading">
+                        Featured <span className="">Projects</span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                    <p className="text-xl text-gray-200 max-w-3xl mx-auto section-subheading">
                         Showcasing my best work and technical expertise
                     </p>
                 </div>
@@ -92,7 +92,7 @@ function Projects() {
                                         className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-medium transition-colors duration-200"
                                     >
                                         <Globe className="h-4 w-4" />
-                                        <span>Live Demo</span>
+                                        <span>Live Link</span>
                                     </a>
                                     {project.github && (
                                         <a

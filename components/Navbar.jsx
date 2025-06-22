@@ -23,14 +23,14 @@ function Navbar() {
     ];
 
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass shadow-lg' : 'bg-transparent'
+        <nav className={`fixed top-0  z-50 transition-all duration-300 ${scrolled ? 'navbar-glass w-10/12 right-1/12 left-1/12 rounded-2xl shadow-lg' : 'w-full  bg-transparent'
             }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 lg:h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <span className="text-2xl lg:text-3xl font-bold gradient-text tracking-tight">
-                            Faraz
+                        <span className={`text-2xl lg:text-3xl font-bold  ${scrolled ? 'text-purple-800' : 'text-white'}`}>
+                            Mohammed Faraz
                         </span>
                     </div>
 
@@ -41,10 +41,10 @@ function Navbar() {
                                 <a
                                     key={item.name}
                                     href={item.href}
-                                    className="relative text-white hover:text-gray-200 px-3 py-2 text-sm font-medium transition-all duration-300 group"
+                                    className={`relative ${scrolled ? 'text-purple-800 hover:text-purple-800' : 'text-white hover:text-gray-200'}  px-3 py-2 text-sm font-medium transition-all duration-300 group`}
                                 >
                                     {item.name}
-                                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                                    <span className={`absolute -bottom-1 left-0 w-full h-0.5 ${scrolled ? 'bg-purple-800' : 'bg-white'} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></span>
                                 </a>
                             ))}
                         </div>
@@ -76,7 +76,7 @@ function Navbar() {
                 {/* Mobile Navigation */}
                 <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     } overflow-hidden`}>
-                    <div className="glass rounded-lg mt-2 p-4 space-y-2">
+                    <div className="navbar-glass rounded-lg mt-2 p-4 space-y-2">
                         {navItems.map((item) => (
                             <a
                                 key={item.name}

@@ -24,7 +24,7 @@ function HeroSection() {
                     {/* Content */}
                     <div className="text-center lg:text-left animate-slide-in-left">
                         <div className="mb-6">
-                            <span className="inline-block px-4 py-2 glass rounded-full text-white text-sm font-medium mb-4">
+                            <span className="glass p-2 rounded-full text-white text-sm font-medium mb-4">
                                 👋 Welcome to my portfolio
                             </span>
                         </div>
