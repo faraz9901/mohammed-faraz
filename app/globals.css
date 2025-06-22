@@ -204,6 +204,10 @@ body {
   .section-padding {
     padding: 60px 0;
   }
+
+  .card {
+    padding: 20px;
+  }
 }
 
 /* Card styling */

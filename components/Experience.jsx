@@ -51,12 +51,12 @@ function Experience() {
         <>
             {/* Education Section */}
             <section id="education" className="section-padding relative scroll-mt-24">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
+                {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div> */}
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="relative z-10 max-w-7xl  px-4  lg:px-8">
                     {/* Section Header */}
                     <div className="text-center mb-16 animate-fade-in-up">
-                        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 section-heading">
+                        <h2 className="text-4xl  font-bold text-white mb-4 section-heading">
                             <span className="">Education</span> & Experience
                         </h2>
                         <p className="text-xl text-gray-200 max-w-3xl mx-auto section-subheading">
@@ -67,9 +67,9 @@ function Experience() {
                     {/* Education Timeline */}
                     <div className="mb-20">
                         <h3 className="text-3xl font-bold text-white mb-12 text-center section-heading">Education</h3>
-                        <div className="space-y-8">
+                        <div className="flex flex-col gap-8">
                             {education.map((edu, index) => (
-                                <div key={index} className={`flex items-start space-x-6 ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
+                                <div key={index} className={`flex items-start gap-4  ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
                                     <div className="flex-shrink-0">
                                         <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                                             <div className="text-white">
@@ -82,13 +82,13 @@ function Experience() {
                                             <h4 className="text-xl font-bold text-gray-800">{edu.degree}</h4>
                                             <span className="text-sm text-gray-500 mt-2 sm:mt-0">{edu.year}</span>
                                         </div>
-                                        <div className="flex items-center space-x-4 mb-3">
-                                            <div className="flex items-center space-x-2">
-                                                <MapPin className="h-4 w-4 text-gray-500" />
+                                        <div className="flex flex-col md:flex-row items-start gap-2 lg:items-center mb-3">
+                                            <div className="flex items-center gap-2 ">
+                                                <Calendar className="h-4 w-4 text-gray-500" />
                                                 <span className="text-gray-600">{edu.institution}</span>
                                             </div>
-                                            <div className="flex items-center space-x-2">
-                                                <Calendar className="h-4 w-4 text-gray-500" />
+                                            <div className="flex items-center gap-2 ">
+                                                <MapPin className="h-4 w-4 text-gray-500" />
                                                 <span className="text-gray-600">{edu.location}</span>
                                             </div>
                                         </div>
@@ -102,9 +102,9 @@ function Experience() {
                     {/* Work Experience Timeline */}
                     <div>
                         <h3 className="text-3xl font-bold text-white mb-12 text-center section-heading">Professional Experience</h3>
-                        <div className="space-y-8">
+                        <div className="flex flex-col gap-8">
                             {workExperience.map((work, index) => (
-                                <div key={index} className={`flex items-start space-x-6 ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
+                                <div key={index} className={`flex gap-4 items-start  ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
                                     <div className="flex-shrink-0">
                                         <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                                             <div className="text-white">
@@ -117,19 +117,19 @@ function Experience() {
                                             <h4 className="text-xl font-bold text-gray-800">{work.title}</h4>
                                             <span className="text-sm text-gray-500 mt-2 sm:mt-0">{work.period}</span>
                                         </div>
-                                        <div className="flex items-center space-x-4 mb-4">
-                                            <div className="flex items-center space-x-2">
+                                        <div className="flex flex-col md:flex-row items-start gap-2 lg:items-center mb-4">
+                                            <div className="flex items-center gap-2 ">
                                                 <Briefcase className="h-4 w-4 text-gray-500" />
                                                 <span className="text-gray-600 font-medium">{work.company}</span>
                                             </div>
-                                            <div className="flex items-center space-x-2">
+                                            <div className="flex items-center gap-2 ">
                                                 <MapPin className="h-4 w-4 text-gray-500" />
                                                 <span className="text-gray-600">{work.location}</span>
                                             </div>
                                         </div>
-                                        <ul className="space-y-2">
+                                        <ul className="flex flex-col gap-2">
                                             {work.achievements.map((achievement, achievementIndex) => (
-                                                <li key={achievementIndex} className="flex items-start space-x-2">
+                                                <li key={achievementIndex} className="flex items-start gap-2">
                                                     <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 flex-shrink-0"></div>
                                                     <span className="text-gray-700">{achievement}</span>
                                                 </li>

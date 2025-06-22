@@ -1,5 +1,9 @@
 import React from 'react'
-import { MailIcon, Phone, Github, ExternalLink } from 'lucide-react'
+import { MailIcon, Phone, } from 'lucide-react'
+import WhatsAppIcon from './Icons/WhatsAppIcon'
+import GithubIcon from './Icons/GithubIcon'
+
+
 
 function HeroSection() {
     return (
@@ -71,13 +75,13 @@ function HeroSection() {
                             />
                             <SocialIcon
                                 href="https://github.com/faraz9901"
-                                icon={<Github className="h-5 w-5" />}
+                                icon={<GithubIcon className="h-5 w-5" />}
                                 label="GitHub"
                             />
                             <SocialIcon
-                                href="https://mohammed-faraz-9azu.vercel.app"
-                                icon={<ExternalLink className="h-5 w-5" />}
-                                label="Portfolio"
+                                href="https://wa.me/919533232256"
+                                icon={<WhatsAppIcon className="h-5 w-5" />}
+                                label="WhatsApp"
                             />
                         </div>
                     </div>
@@ -91,7 +95,7 @@ function HeroSection() {
                             {/* Image container */}
                             <div className="relative glass rounded-full p-2 animate-float">
                                 <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDtd0soCSRdpo8Y5klekJdABh4emG2P29jwg&s"
+                                    src="/hero.png"
                                     alt="Mohammed Faraz"
                                     width={400}
                                     height={400}
@@ -99,13 +103,13 @@ function HeroSection() {
                                 />
                             </div>
 
-                            {/* Floating elements */}
+                            {/* Floating elements
                             <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '0.5s' }}>
                                 <span className="text-2xl">🚀</span>
                             </div>
                             <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-400 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '1.5s' }}>
                                 <span className="text-xl">💻</span>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

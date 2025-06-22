@@ -54,12 +54,12 @@ function Navbar() {
                     <div className="lg:hidden">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="text-white hover:text-gray-200 p-2 rounded-md transition-colors duration-200"
+                            className={`p-2 rounded-md transition-colors duration-200 ${scrolled ? 'text-purple-800 hover:text-purple-800' : 'text-white hover:text-gray-200'}`}
                             aria-label="Toggle menu"
                         >
                             <svg
                                 className="h-6 w-6"
-                                fill="none"
+                                fill="currentColor"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
                             >
