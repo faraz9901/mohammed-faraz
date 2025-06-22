@@ -250,13 +250,13 @@ function Contact() {
                 </div>
 
                 {/* Footer */}
-                <div className="text-center w-11/12 mx-auto mt-16 animate-fade-in-up">
+                <div className="text-center text-xs lg:text-sm w-11/12 mx-auto mt-16 animate-fade-in-up">
                     <div className="glass rounded-lg p-8">
-                        <p className="text-white text-lg">
+                        <p className="text-white">
                             Thanks for visiting my portfolio!
                         </p>
                         <p className="text-white">
-                            © 2024 Mohammed Faraz. Built with ❤️ using Next.js & Tailwind CSS
+                            © 2025 Mohammed Faraz. Built with ❤️ using Next.js & Tailwind CSS
                         </p>
                     </div>
                 </div>

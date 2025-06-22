@@ -49,7 +49,7 @@ function Projects() {
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
+                <div className="flex flex-wrap gap-8 animate-fade-in-up">
                     {projects.map((project, index) => (
                         <div key={index} className="card hover-lift group overflow-hidden">
                             {/* Project Image */}

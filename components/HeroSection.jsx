@@ -3,7 +3,7 @@ import { MailIcon, Phone, Github, ExternalLink } from 'lucide-react'
 
 function HeroSection() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-mt-24 pb-24" id="home">
+        <section className="relative     min-h-screen flex items-center justify-center overflow-hidden scroll-mt-24 pb-24" id="home">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900"></div>
 
@@ -47,7 +47,7 @@ function HeroSection() {
                                 className="btn-primary inline-flex items-center justify-center"
                             >
                                 View My Work
-                                <ExternalLink className="ml-2 h-4 w-4" />
+                                {/* <ExternalLink className="ml-2 h-4 w-4" /> */}
                             </a>
                             <a
                                 href="#contact"

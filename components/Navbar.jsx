@@ -35,7 +35,7 @@ function Navbar() {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:block">
+                    <div className="hidden  lg:block">
                         <div className="ml-10 flex items-baseline gap-8">
                             {navItems.map((item) => (
                                 <a
@@ -51,7 +51,7 @@ function Navbar() {
                     </div>
 
                     {/* Mobile menu button */}
-                    <div className="md:hidden">
+                    <div className="lg:hidden">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="text-white hover:text-gray-200 p-2 rounded-md transition-colors duration-200"
@@ -74,14 +74,14 @@ function Navbar() {
                 </div>
 
                 {/* Mobile Navigation */}
-                <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                <div className={`lg:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     } overflow-hidden`}>
                     <div className="navbar-glass rounded-lg mt-2 p-4 space-y-2">
                         {navItems.map((item) => (
                             <a
                                 key={item.name}
                                 href={item.href}
-                                className="block text-white hover:text-gray-200 px-3 py-2 text-base font-medium rounded-md transition-colors duration-200"
+                                className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${scrolled ? 'text-purple-800 hover:text-purple-800 ' : 'text-white hover:text-gray-200'}`}
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.name}
