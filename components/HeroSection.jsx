@@ -1,13 +1,14 @@
 import React from 'react'
-import { MailIcon, Phone, } from 'lucide-react'
+import { MailIcon, Phone, Download } from 'lucide-react'
 import WhatsAppIcon from './Icons/WhatsAppIcon'
 import GithubIcon from './Icons/GithubIcon'
+import LinkedInIcon from './Icons/LinkedInIcon'
 
 
 
 function HeroSection() {
     return (
-        <section className="relative     min-h-screen flex items-center justify-center overflow-hidden scroll-mt-24 pb-24" id="home">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-mt-24 pb-24" id="home">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900"></div>
 
@@ -33,16 +34,22 @@ function HeroSection() {
                             </span>
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 leading-tight">
                             Hi, I&apos;m{' '}
                             <span className="gradient-text">Mohammed</span>{' '}
                             <span className="text-yellow-400">Faraz</span>
                         </h1>
 
-                        <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
-                            Full-Stack Developer crafting modern web experiences with{' '}
-                            <span className="text-yellow-400 font-semibold">React</span> and{' '}
-                            <span className="text-yellow-400 font-semibold">Node.js</span>
+                        <p className="text-lg sm:text-xl text-yellow-300 font-semibold mb-4">
+                            Mid-Level Full Stack Developer
+                        </p>
+
+                        <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Building scalable production-grade web applications with{' '}
+                            <span className="text-yellow-400 font-semibold">React.js</span>,{' '}
+                            <span className="text-yellow-400 font-semibold">Next.js</span>,{' '}
+                            <span className="text-yellow-400 font-semibold">Nest.js</span> &{' '}
+                            <span className="text-yellow-400 font-semibold">PostgreSQL</span>
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
@@ -51,18 +58,19 @@ function HeroSection() {
                                 className="btn-primary inline-flex items-center justify-center"
                             >
                                 View My Work
-                                {/* <ExternalLink className="ml-2 h-4 w-4" /> */}
                             </a>
                             <a
-                                href="#contact"
-                                className="btn-secondary inline-flex items-center justify-center"
+                                href="/resume.pdf"
+                                download
+                                className="btn-secondary inline-flex items-center justify-center gap-2"
                             >
-                                Get In Touch
+                                <Download className="h-4 w-4" />
+                                Download Resume
                             </a>
                         </div>
 
                         {/* Social Links */}
-                        <div className="flex gap-4 justify-center lg:justify-start">
+                        <div className="flex gap-4 justify-center lg:justify-start flex-wrap">
                             <SocialIcon
                                 href="mailto:mdfaraz9901@gmail.com"
                                 icon={<MailIcon className="h-5 w-5" />}
@@ -99,28 +107,21 @@ function HeroSection() {
                                     alt="Mohammed Faraz"
                                     width={400}
                                     height={400}
-                                    className="rounded-full w-80 h-80 object-cover border-4 border-white/20 shadow-2xl"
+                                    className="rounded-full w-64 h-64 sm:w-80 sm:h-80 object-cover border-4 border-white/20 shadow-2xl"
                                 />
                             </div>
 
-                            {/* Floating elements
-                            <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '0.5s' }}>
-                                <span className="text-2xl">🚀</span>
+                            {/* Floating badges */}
+                            <div className="absolute -top-4 -right-4 glass rounded-xl px-3 py-2 animate-float" style={{ animationDelay: '0.5s' }}>
+                                <span className="text-white text-xs font-semibold">⚡ Full Stack</span>
                             </div>
-                            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-400 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '1.5s' }}>
-                                <span className="text-xl">💻</span>
-                            </div> */}
+                            <div className="absolute -bottom-4 -left-4 glass rounded-xl px-3 py-2 animate-float" style={{ animationDelay: '1.5s' }}>
+                                <span className="text-white text-xs font-semibold">☁️ Cloud & DevOps</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/* Scroll indicator */}
-            {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-                    <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
-                </div>
-            </div> */}
         </section>
     )
 }

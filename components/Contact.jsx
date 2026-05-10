@@ -39,18 +39,6 @@ const socialLinks = [
     url: "https://github.com/faraz9901",
     color: "hover:text-gray-800",
   },
-  {
-    icon: <Linkedin className="h-5 w-5" />,
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/mohammed-faraz-864774251",
-    color: "hover:text-blue-600",
-  },
-  {
-    icon: <Twitter className="h-5 w-5" />,
-    name: "Twitter",
-    url: "https://x.com/Mohammedfaraz91",
-    color: "hover:text-blue-400",
-  },
 ];
 
 const validateForm = (formData) => {
@@ -133,7 +121,7 @@ function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Contact Information */}
           <div className="animate-slide-in-left">
             <div className="card">
@@ -171,7 +159,7 @@ function Contact() {
               </div>
 
               {/* Social Links */}
-              <div className="mt-8 pt-8 border-t border-gray-200">
+              {/* <div className="mt-8 pt-8 border-t border-gray-200">
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">
                   Follow Me
                 </h4>
@@ -189,7 +177,7 @@ function Contact() {
                     </a>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -288,7 +276,7 @@ function Contact() {
           <div className="glass rounded-lg p-8">
             <p className="text-white">Thanks for visiting my portfolio!</p>
             <p className="text-white">
-              © 2025 Mohammed Faraz. Built with ❤️ using Next.js & Tailwind CSS
+              © {new Date().getFullYear()} Mohammed Faraz. Built using Next.js & Tailwind CSS
             </p>
           </div>
         </div>

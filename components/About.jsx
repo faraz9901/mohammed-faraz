@@ -1,23 +1,50 @@
 import React from 'react'
-import { User, Code, Rocket } from 'lucide-react'
+import { User, Code, Rocket, Shield, Cloud, Zap } from 'lucide-react'
 
 function About() {
     const highlights = [
         {
             icon: <Code className="h-8 w-8" />,
             title: "Full-Stack Development",
-            description: "Building complete web applications using MERN and Next.js stacks with modern best practices."
+            description: "Building production-grade web applications with React.js, Next.js, Vite, Nest.js, and PostgreSQL using modern best practices."
+        },
+        {
+            icon: <Shield className="h-8 w-8" />,
+            title: "Auth & Security",
+            description: "Implementing JWT authentication, role-based access control (RBAC), AWS Cognito, rate limiting, and secure payment workflows."
+        },
+        {
+            icon: <Cloud className="h-8 w-8" />,
+            title: "Cloud & DevOps",
+            description: "Deploying and maintaining applications on AWS, GCP, with Docker, Terraform, CI/CD pipelines, and cloud-native infrastructure."
+        },
+        {
+            icon: <Zap className="h-8 w-8" />,
+            title: "Performance Optimization",
+            description: "Achieving 90+ Lighthouse scores through lazy loading, caching with Redis, BullMQ queues, and asset optimization."
         },
         {
             icon: <Rocket className="h-8 w-8" />,
-            title: "Performance Optimization",
-            description: "Creating responsive UIs and optimizing applications for production with 90+ Lighthouse scores."
+            title: "Backend Systems",
+            description: "Designing scalable REST APIs, background job processing, cron jobs, webhook integrations, and payment gateway systems."
         },
         {
             icon: <User className="h-8 w-8" />,
             title: "Real-World Experience",
-            description: "Developed multiple production applications including job portals, e-commerce platforms, and social apps."
+            description: "Production experience across e-commerce, SaaS, construction management, and educational platforms with real users."
         }
+    ];
+
+    const coreExpertise = [
+        "Full Stack Development",
+        "Scalable Backend Systems",
+        "Authentication & RBAC",
+        "Redis Caching",
+        "Queue Systems",
+        "Payment Integrations",
+        "Cloud Infrastructure",
+        "Performance Optimization",
+        "Admin Dashboards",
     ];
 
     return (
@@ -45,41 +72,47 @@ function About() {
                                 Professional Summary
                             </h3>
                             <div className="space-y-4 text-gray-700">
-                                <p className="text-lg leading-relaxed">
-                                    I&apos;m a dedicated web developer with extensive experience building full-stack applications
-                                    using the MERN stack and Next.js. My passion lies in creating seamless user experiences
-                                    and robust backend systems.
+                                <p className="text-base leading-relaxed">
+                                    Full Stack Developer with experience building and maintaining scalable production-grade web applications across
+                                    e-commerce, SaaS, and management platforms. Skilled in developing modern frontend systems using{' '}
+                                    <strong>React.js, Next.js, Vite, Tailwind CSS, and ShadCN UI</strong> along with backend architectures using{' '}
+                                    <strong>Nest.js, PostgreSQL, Redis, and MongoDB</strong>.
                                 </p>
-                                <p className="text-lg leading-relaxed">
-                                    With a strong foundation in both frontend and backend development, I specialize in
-                                    building scalable applications that deliver exceptional performance and user satisfaction.
+                                <p className="text-base leading-relaxed">
+                                    Experienced in authentication systems, role-based access control, payment integrations, background job processing,
+                                    caching, rate limiting, cloud deployments, and infrastructure workflows using{' '}
+                                    <strong>AWS, GCP, Docker, and Terraform</strong>. Passionate about building performant, maintainable, and
+                                    user-focused applications with clean architecture and modern engineering practices.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    {/* Skills Preview */}
+                    {/* Core Expertise */}
                     <div className="animate-slide-in-right">
                         <div className="card">
                             <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                                Core Competencies
+                                Core Expertise
                             </h3>
-                            <div className="space-y-4">
-                                <div className="flex items-center space-x-3">
-                                    <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                                    <span className="text-gray-700 font-medium">Frontend Development (React, Next.js)</span>
+                            <div className="flex flex-wrap gap-2">
+                                {coreExpertise.map((item, index) => (
+                                    <span
+                                        key={index}
+                                        className="px-3 py-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 text-sm font-semibold rounded-full border border-purple-200"
+                                    >
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="mt-6 pt-6 border-t border-gray-200 grid grid-cols-2 gap-4">
+                                <div className="text-center">
+                                    <p className="text-3xl font-bold text-purple-600">2+</p>
+                                    <p className="text-sm text-gray-600 font-medium">Years Experience</p>
                                 </div>
-                                <div className="flex items-center space-x-3">
-                                    <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                    <span className="text-gray-700 font-medium">Backend Development (Node.js, Express)</span>
-                                </div>
-                                <div className="flex items-center space-x-3">
-                                    <div className="w-3 h-3 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
-                                    <span className="text-gray-700 font-medium">Database Design (MongoDB, Mongoose)</span>
-                                </div>
-                                <div className="flex items-center space-x-3">
-                                    <div className="w-3 h-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"></div>
-                                    <span className="text-gray-700 font-medium">UI/UX Design (Tailwind CSS, Responsive)</span>
+                                <div className="text-center">
+                                    <p className="text-3xl font-bold text-purple-600">3+</p>
+                                    <p className="text-sm text-gray-600 font-medium">Production Apps</p>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +120,7 @@ function About() {
                 </div>
 
                 {/* Highlights Grid */}
-                <div className="grid md:grid-cols-3 gap-8 animate-fade-in-up">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up">
                     {highlights.map((highlight, index) => (
                         <div key={index} className="card hover-lift text-center group">
                             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -98,7 +131,7 @@ function About() {
                             <h3 className="text-xl font-bold text-gray-800 mb-4">
                                 {highlight.title}
                             </h3>
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-gray-600 leading-relaxed text-sm">
                                 {highlight.description}
                             </p>
                         </div>

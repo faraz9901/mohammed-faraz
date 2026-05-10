@@ -1,61 +1,112 @@
 import React from "react";
-import { Code2, Database, Palette, Settings, Globe, Zap } from "lucide-react";
+import { Code2, Database, Palette, Settings, Globe, Zap, Server, Cloud } from "lucide-react";
 
 function Skills() {
   const skillCategories = [
     {
       icon: <Code2 className="h-6 w-6" />,
       title: "Programming Languages",
+      color: "from-violet-500 to-purple-500",
       skills: ["JavaScript", "TypeScript", "HTML5", "CSS3"],
     },
     {
       icon: <Globe className="h-6 w-6" />,
       title: "Frontend Technologies",
+      color: "from-blue-500 to-cyan-500",
       skills: [
         "React.js",
         "Next.js",
+        "Vite",
         "Tailwind CSS",
-        "Shadcn UI",
+        "ShadCN UI",
         "Bootstrap",
         "Redux Toolkit",
+        "Zustand",
+        "React Query",
+        "Framer Motion",
+        "Recharts",
       ],
     },
     {
-      icon: <Database className="h-6 w-6" />,
-      title: "Backend & Database",
+      icon: <Server className="h-6 w-6" />,
+      title: "Backend & APIs",
+      color: "from-emerald-500 to-green-500",
       skills: [
         "Node.js",
         "Express.js",
         "Nest.js",
+        "REST APIs",
+        "JWT / OAuth",
+        "WebSockets",
+        "Rate Limiting",
+        "RBAC",
+        "AWS Cognito",
+      ],
+    },
+    {
+      icon: <Database className="h-6 w-6" />,
+      title: "Databases & ORMs",
+      color: "from-orange-500 to-amber-500",
+      skills: [
+        "PostgreSQL",
         "MongoDB",
         "Mongoose",
-        "PostgreSQL",
         "TypeORM",
+        "Prisma",
+        "Redis",
+        "BullMQ",
+      ],
+    },
+    {
+      icon: <Cloud className="h-6 w-6" />,
+      title: "Cloud & DevOps",
+      color: "from-sky-500 to-blue-500",
+      skills: [
+        "AWS (S3, EC2, RDS, Lambda)",
+        "GCP",
+        "Docker",
+        "Terraform",
+        "CI/CD",
+        "Vercel",
+        "Render",
+        "Firebase",
+        "GitHub Actions",
       ],
     },
     {
       icon: <Zap className="h-6 w-6" />,
-      title: "State Management & APIs",
-      skills: ["React Query", "Zustand", "REST APIs", "JWT"],
+      title: "Integrations & Services",
+      color: "from-pink-500 to-rose-500",
+      skills: [
+        "Stripe",
+        "Razorpay",
+        "PayU",
+        "Brevo",
+        "Google Analytics",
+        "Meta Pixel",
+      ],
     },
     {
       icon: <Settings className="h-6 w-6" />,
-      title: "Tools & DevOps",
+      title: "Tools & Platforms",
+      color: "from-indigo-500 to-violet-500",
       skills: [
         "Git",
         "GitHub",
         "Postman",
-        "Firebase",
-        "Vercel",
-        "Render",
-        "GCP",
-        "Docker",
+        "Cron Jobs",
+        "BullMQ",
+        "Webhooks",
+        "SEO",
+        "Linux",
+        "Figma",
       ],
     },
     {
       icon: <Palette className="h-6 w-6" />,
-      title: "Design & Platforms",
-      skills: ["Responsive Design", "UI/UX", "Figma", "SEO", "Linux"],
+      title: "Design & Other",
+      color: "from-fuchsia-500 to-pink-500",
+      skills: ["Responsive Design", "UI/UX", "Figma", "SEO", "Web Analytics", "Lighthouse Optimization"],
     },
   ];
 
@@ -71,27 +122,27 @@ function Skills() {
             Technical <span className="">Skills</span>
           </h2>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto section-subheading">
-            A comprehensive toolkit for building modern web applications
+            A comprehensive toolkit for building modern, scalable web applications
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 animate-fade-in-up">
           {skillCategories.map((category, index) => (
             <div key={index} className="card hover-lift group">
-              <div className="flex items-center mb-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="flex items-center mb-5">
+                <div className={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r ${category.color} rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                   <div className="text-white">{category.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">
+                <h3 className="text-base font-bold text-gray-800 leading-tight">
                   {category.title}
                 </h3>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="skill-badge hover:scale-105 transition-all duration-300"
+                    className="skill-badge font-semibold text-sm px-3 py-1 hover:scale-105 transition-all duration-300"
                   >
                     {skill}
                   </span>
@@ -100,38 +151,6 @@ function Skills() {
             </div>
           ))}
         </div>
-
-        {/* Experience Level */}
-        {/* <div className="mt-16 animate-fade-in-up">
-                    <div className="card text-center">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-8">
-                            Experience Level
-                        </h3>
-                        <div className="grid md:grid-cols-3 gap-8">
-                            <div className="space-y-4">
-                                <h4 className="text-lg font-semibold text-gray-700">Frontend</h4>
-                                <div className="w-full bg-gray-200 rounded-full h-3">
-                                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full" style={{ width: '90%' }}></div>
-                                </div>
-                                <p className="text-sm text-gray-600">Advanced</p>
-                            </div>
-                            <div className="space-y-4">
-                                <h4 className="text-lg font-semibold text-gray-700">Backend</h4>
-                                <div className="w-full bg-gray-200 rounded-full h-3">
-                                    <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-3 rounded-full" style={{ width: '85%' }}></div>
-                                </div>
-                                <p className="text-sm text-gray-600">Advanced</p>
-                            </div>
-                            <div className="space-y-4">
-                                <h4 className="text-lg font-semibold text-gray-700">DevOps</h4>
-                                <div className="w-full bg-gray-200 rounded-full h-3">
-                                    <div className="bg-gradient-to-r from-green-500 to-blue-500 h-3 rounded-full" style={{ width: '75%' }}></div>
-                                </div>
-                                <p className="text-sm text-gray-600">Intermediate</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
       </div>
     </section>
   );
