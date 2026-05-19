@@ -1,45 +1,74 @@
 import React from "react";
 import { ExternalLink, Github, Globe, Code, Star } from "lucide-react";
 
+const projects = [
+  {
+    title: "NestJS Starter Kit",
+    description:
+      "Production-ready NestJS backend boilerplate with standardized APIs, SWR caching, request-scoped logging, centralized error handling, reusable decorators/interceptors, and Docker-ready infrastructure.",
+    link: "https://github.com/faraz9901/nestjs-starter",
+    github: null,
+    tech: [
+      "NestJS",
+      "Redis",
+      "Docker",
+      "Swagger",
+      "TypeScript",
+      "Winston",
+      "Caching",
+      "EventEmitter"
+    ],
+    image: "/nestjs.png",
+    featured: true,
+    badge: "Open Source",
+    badgeColor: "from-purple-500 to-pink-500",
+  },
+
+  {
+    title: "Malhaari",
+    description:
+      "Production-grade saree e-commerce platform featuring dynamic homepage management, coupon systems, payment integrations, Redis caching, notification queues, and scalable backend architecture.",
+    link: "https://malhaari.com",
+    github: null,
+    tech: [
+      "Next.js",
+      "PostgreSQL",
+      "Redis",
+      "BullMQ",
+      "Docker",
+      "TypeORM",
+      "PayU",
+      "Tailwind CSS"
+    ],
+    image: "/malhaari.png",
+    featured: true,
+    badge: "Live",
+    badgeColor: "from-green-500 to-emerald-500",
+  },
+
+  {
+    title: "Noteswala",
+    description:
+      "Educational platform for medical students with digital note purchases, quiz and event modules, Razorpay payment workflows, Firebase integrations, and optimized frontend performance.",
+    link: "https://noteswala.site",
+    github: null,
+    tech: [
+      "Next.js",
+      "Firebase",
+      "Zustand",
+      "Razorpay",
+      "Tailwind CSS",
+      "SEO"
+    ],
+    image: "/noteswala.png",
+    featured: true,
+    badge: "Live",
+    badgeColor: "from-blue-500 to-cyan-500",
+  },
+];
+
+
 function Projects() {
-  const projects = [
-    {
-      title: "Malhaari",
-      description:
-        "Production-grade saree e-commerce platform featuring dynamic homepage management, coupon systems, payment integrations, Redis caching, notification queues, and scalable full stack architecture built for high performance and seamless shopping experience.",
-      link: "https://malhaari.com",
-      github: null,
-      tech: ["React.js", "Next.js", "Node.js", "PostgreSQL", "TypeORM", "Redis", "BullMQ", "Docker", "Dokploy", "PayU", "Tailwind CSS"],
-      image: "/malhaari.png",
-      featured: true,
-      badge: "Live",
-      badgeColor: "from-green-500 to-emerald-500",
-    },
-    {
-      title: "Noteswala",
-      description:
-        "A comprehensive study platform for medical students offering access to handwritten notes and study material with advanced search and filtering capabilities. Achieved 90+ Lighthouse performance scores.",
-      link: "https://noteswala.site",
-      github: null,
-      tech: ["Next.js", "Tailwind CSS", "Vercel", "Responsive Design", "SEO"],
-      image: "/noteswala.png",
-      featured: true,
-      badge: "Live",
-      badgeColor: "from-green-500 to-emerald-500",
-    },
-    {
-      title: "Noteswala Store",
-      description:
-        "An e-commerce platform selling premium study notes with product listings, secure checkout, user management features, and Redux Toolkit state management.",
-      link: "https://store.noteswala.site",
-      github: null,
-      tech: ["Next.js", "Redux Toolkit", "Tailwind CSS", "E-commerce"],
-      image: "/store.png",
-      featured: true,
-      badge: "Live",
-      badgeColor: "from-blue-500 to-cyan-500",
-    },
-  ];
 
   return (
     <section id="projects" className="section-padding relative scroll-mt-24">
