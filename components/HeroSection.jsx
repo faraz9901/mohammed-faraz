@@ -41,7 +41,7 @@ function HeroSection() {
                         </h1>
 
                         <p className="text-lg sm:text-xl text-yellow-300 font-semibold mb-4">
-                            Mid-Level Full Stack Developer
+                            Full Stack Developer
                         </p>
 
                         <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
