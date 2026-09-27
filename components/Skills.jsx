@@ -7,7 +7,7 @@ function Skills() {
       icon: <Code2 className="h-6 w-6" />,
       title: "Programming Languages",
       color: "from-violet-500 to-purple-500",
-      skills: ["JavaScript", "TypeScript", "HTML5", "CSS3"],
+      skills: ["JavaScript", "TypeScript", "Python", "HTML5", "CSS3"],
     },
     {
       icon: <Globe className="h-6 w-6" />,
@@ -37,10 +37,11 @@ function Skills() {
         "Nest.js",
         "REST APIs",
         "JWT / OAuth",
-        "WebSockets",
+        "WebSockets / Socket.IO",
         "Rate Limiting",
         "RBAC",
         "AWS Cognito",
+        "Better Auth",
       ],
     },
     {
@@ -100,6 +101,8 @@ function Skills() {
         "SEO",
         "Linux",
         "Figma",
+        "Electron",
+        "Turborepo",
       ],
     },
     {

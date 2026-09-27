@@ -26,12 +26,12 @@ function About() {
         {
             icon: <Rocket className="h-8 w-8" />,
             title: "Backend Systems",
-            description: "Designing scalable REST APIs, background job processing, cron jobs, webhook integrations, and payment gateway systems."
+            description: "Designing scalable REST APIs, background job processing with BullMQ, cron jobs, webhook integrations, and real-time WebSocket communication."
         },
         {
             icon: <User className="h-8 w-8" />,
             title: "Real-World Experience",
-            description: "Production experience across e-commerce, SaaS, construction management, and educational platforms with real users."
+            description: "Production experience across e-commerce, SaaS, construction management, exam proctoring, and educational platforms with real users."
         }
     ];
 
@@ -40,11 +40,14 @@ function About() {
         "Scalable Backend Systems",
         "Authentication & RBAC",
         "Redis Caching",
-        "Queue Systems",
+        "Queue Systems (BullMQ)",
         "Payment Integrations",
         "Cloud Infrastructure",
         "Performance Optimization",
         "Admin Dashboards",
+        "Electron Desktop Apps",
+        "Real-time WebSockets",
+        "Monorepo (Turborepo)",
     ];
 
     return (
@@ -74,14 +77,15 @@ function About() {
                             <div className="space-y-4 text-gray-700">
                                 <p className="text-base leading-relaxed">
                                     Full Stack Developer with experience building and maintaining scalable production-grade web applications across
-                                    e-commerce, SaaS, and management platforms. Skilled in developing modern frontend systems using{' '}
+                                    e-commerce, SaaS, exam proctoring, and management platforms. Skilled in developing modern frontend systems using{' '}
                                     <strong>React.js, Next.js, Vite, Tailwind CSS, and ShadCN UI</strong> along with backend architectures using{' '}
                                     <strong>Nest.js, PostgreSQL, Redis, and MongoDB</strong>.
                                 </p>
                                 <p className="text-base leading-relaxed">
-                                    Experienced in authentication systems, role-based access control, payment integrations, background job processing,
-                                    caching, rate limiting, cloud deployments, and infrastructure workflows using{' '}
-                                    <strong>AWS, GCP, Docker, and Terraform</strong>. Passionate about building performant, maintainable, and
+                                    Experienced in authentication systems (Better Auth, OTP, OAuth), role-based access control, payment integrations, background job processing,
+                                    real-time WebSocket communication, cloud deployments, and infrastructure workflows using{' '}
+                                    <strong>AWS, GCP, Docker, and Terraform</strong>. Also build Electron desktop clients with kiosk mode, webcam recording,
+                                    and process monitoring. Passionate about building performant, maintainable, and
                                     user-focused applications with clean architecture and modern engineering practices.
                                 </p>
                             </div>

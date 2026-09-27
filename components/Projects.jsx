@@ -1,7 +1,28 @@
-import React from "react";
-import { ExternalLink, Github, Globe, Code, Star } from "lucide-react";
+import { Code, Globe, Star } from "lucide-react";
+import GithubIcon from './Icons/GithubIcon';
 
 const projects = [
+  {
+    title: "E-Thekedaar",
+    description:
+      "Multi-tenant construction management platform with project collaboration, OCR-powered workflows, subscription billing, and cloud-native AWS infrastructure.",
+    link: "https://landing-staging.e-thekedaar.com/",
+    github: null,
+    tech: [
+      "React",
+      "NestJS",
+      "AWS",
+      "Redis",
+      "Terraform",
+      "PostgreSQL",
+      "BullMQ",
+      "S3"
+    ],
+    image: "/ethekedaar.png",
+    featured: true,
+    badge: "Live",
+    badgeColor: "from-green-500 to-emerald-500",
+  },
   {
     title: "NestJS Starter Kit",
     description:
@@ -153,7 +174,7 @@ function Projects() {
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 text-gray-600 hover:text-gray-700 font-medium transition-colors duration-200 text-sm"
                     >
-                      <Github className="h-4 w-4" />
+                      <GithubIcon className="h-4 w-4" />
                       <span>Code</span>
                     </a>
                   )}

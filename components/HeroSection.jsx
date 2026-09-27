@@ -48,8 +48,9 @@ function HeroSection() {
                             Building scalable production-grade web applications with{' '}
                             <span className="text-yellow-400 font-semibold">React.js</span>,{' '}
                             <span className="text-yellow-400 font-semibold">Next.js</span>,{' '}
-                            <span className="text-yellow-400 font-semibold">Nest.js</span> &{' '}
-                            <span className="text-yellow-400 font-semibold">PostgreSQL</span>
+                            <span className="text-yellow-400 font-semibold">Nest.js</span>,{' '}
+                            <span className="text-yellow-400 font-semibold">PostgreSQL</span> &{' '}
+                            <span className="text-yellow-400 font-semibold">Electron</span>
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">

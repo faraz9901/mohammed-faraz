@@ -1,15 +1,13 @@
 "use client";
-import React, { useState } from "react";
 import {
   Mail,
-  Phone,
   MapPin,
-  Send,
-  Github,
-  Linkedin,
-  Twitter,
+  Phone,
+  Send
 } from "lucide-react";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import GithubIcon from './Icons/GithubIcon';
 
 const contactInfo = [
   {
@@ -34,7 +32,7 @@ const contactInfo = [
 
 const socialLinks = [
   {
-    icon: <Github className="h-5 w-5" />,
+    icon: <GithubIcon className="h-5 w-5" />,
     name: "GitHub",
     url: "https://github.com/faraz9901",
     color: "hover:text-gray-800",
